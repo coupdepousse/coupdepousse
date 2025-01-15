@@ -104,43 +104,55 @@ header .logo img {
     color: #4CAF50;
 }
 
-/* Formulaire de contact */
+/* Styles pour le formulaire */
+.contact-form input,
+.contact-form textarea {
+    width: 80%;
+    max-width: 600px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #4CAF50;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.contact-form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-form button:hover {
+    background-color: #45A049;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
 .contact-form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 600px;
-    margin: 0 auto;
+    gap: 10px;
+    margin-top: 20px;
 }
 
-.contact-form input, .contact-form textarea {
-    width: 100%;
-    margin: 10px 0;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s;
-}
-
-.contact-form input:focus, .contact-form textarea:focus {
-    border-color: #4CAF50;
-    outline: none;
-}
-
-.contact-form button {
-    background: #4CAF50;
-    color: #fff;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.3s;
-}
-
-.contact-form button:hover {
-    background: #45A049;
-    transform: scale(1.05);
+/* Style pour un message de confirmation (si ajouté plus tard) */
+.confirmation-message {
+    color: #4CAF50;
+    font-weight: bold;
+    margin-top: 20px;
 }
 
 /* Galerie */
