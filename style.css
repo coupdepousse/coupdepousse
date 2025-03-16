@@ -1,0 +1,369 @@
+/* Styles globaux */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #000000;
+    background: #f8f5f0;
+}
+
+/* En-tête */
+header {
+    display: flex; /* Active Flexbox */
+    align-items: center; /* Centre verticalement le logo et les liens */
+    justify-content: center; /* Centre horizontalement les éléments */
+    background: #f7f7f7;
+    padding: 30px 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    position: absolute; /* Place le logo en dehors du flux principal */
+    left: 20px; /* Ajuste la position horizontale du logo */
+    display: flex;
+    align-items: center;
+    top : 3px
+}
+
+header .logo img {
+    height: 80px; /* Ajustez la hauteur du logo */
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin: 0 15px; /* Espace horizontal entre les liens */
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    font-size: 18px; /* Taille harmonieuse pour les liens */
+    transition: color 0.3s;
+}
+
+.menu li a:hover {
+    color: #4CAF50;
+}
+
+/* Hero Section (Accueil) */
+.hero {
+    position: relative; /* Nécessaire pour la superposition */
+    background-image: url('ton-image.jpg'); /* Remplace par le chemin de ton image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Ajuste selon tes besoins */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    color: white;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Noir transparent : ajuste l'opacité ici */
+    z-index: 1; /* Place la superposition derrière le contenu */
+}
+
+.hero-content {
+    position: relative; /* Permet au texte d'être au-dessus de la superposition */
+    z-index: 2; /* Place le contenu au-dessus de la superposition */
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero-content .button {
+    background: #fff;
+    color: #4CAF50;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.hero-content .button:hover {
+    background: #4CAF50;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Section générale */
+.section {
+    padding: 60px 20px;
+    background: #fff;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(135, 21, 21, 0.05);
+    border-radius: 10px;
+    text-align: left;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #4CAF50;
+}
+
+/* Styles pour le formulaire */
+.contact-form input,
+.contact-form textarea {
+    width: 80%;
+    max-width: 600px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 80%;
+    max-width: 600px;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #8B5A2B; /* Bordure marron terre */
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    color: #333; /* Texte neutre pour le formulaire */
+}
+
+.contact-form button {
+    background-color: #000000; /* Marron pour bouton */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-form button:hover {
+    background-color: #000000; /* Marron foncé au survol */
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Style pour un message de confirmation (si ajouté plus tard) */
+.confirmation-message {
+    color: #4CAF50;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Galerie */
+.gallery {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: 30%;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* FAQ */
+#faq {
+    background: #f9f9f9;
+    padding: 20px 40px;
+    border-radius: 10px;
+}
+
+.faq-item h3 {
+    margin: 10px 0;
+    cursor: pointer;
+    color: #000000;
+    transition: color 0.3s;
+}
+
+.faq-item h3:hover {
+    color: #4CAF50;
+    text-decoration: underline;
+}
+
+.faq-item p {
+    display: none;
+    margin: 10px 0;
+    padding: 0 20px;
+    background: #fff;
+    border-left: 4px solid #4CAF50;
+    border-radius: 5px;
+    color: #333;
+}
+
+/* Pied de page */
+footer {
+    text-align: center;
+    background: #4CAF50;
+    color: #fff;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+footer .social-media {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 0;
+}
+
+footer .social-media li {
+    margin: 0 10px;
+}
+
+footer .social-media li a img {
+    width: 30px;
+    height: 30px;
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s;
+}
+
+footer .social-media li a:hover img {
+    filter: brightness(0.8) invert(0.8);
+}
+
+/* Animation fade-in */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aligner les listes des objectifs et des caractéristiques à gauche */
+#apropos h3 + ul {
+    text-align: left;
+    margin-left: 20px;
+    list-style-position: outside;
+    padding-left: 20px;
+    color: #000000; /* Pour matcher la nouvelle couleur de texte */
+}
+
+#apropos ul li {
+    line-height: 1.8; /* Ajoute un peu d’espacement pour améliorer la lisibilité */
+}
+
+/* Style pour l'arrière-plan de la section accueil */
+#accueil {
+    background: url('AP.jpg') no-repeat center center; /* Remplacez 'votre-image.jpg' par le nom de votre image */
+    background-size: cover; /* Ajuste l'image pour couvrir toute la section */
+    height: 100vh; /* Ajuste la hauteur pour remplir l'écran */
+    color: #f8f5f0; /* Texte en blanc pour contraster avec l'image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Navigation Responsive */
+.menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+/* Styles pour le menu burger sur mobile */
+.burger-menu {
+    display: none; /* Caché par défaut */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.burger-menu div {
+    width: 30px;
+    height: 4px;
+    background-color: #000;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Styles pour mobile */
+@media screen and (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+    }
+
+    .menu.active {
+        display: flex; /* Affiche le menu quand activé */
+    }
+
+    .menu li {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .burger-menu {
+        display: flex; /* Affiche l'icône burger */
+    }
+}
