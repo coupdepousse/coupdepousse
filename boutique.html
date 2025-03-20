@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique - Coup de Pousse</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="produits.js"></script>
+</head>
+<body>
+    <!-- En-tête -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="logo1.png" alt="Logo Coup de Pousse" class="site-logo">
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="boutique.html">Boutique</a></li>
+                <li><a href="index.html#apropos">À propos</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+                <li><a href="index.html#galerie">Galerie</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Section Boutique -->
+    <section id="boutique" class="section">
+        <h2>Notre Boutique</h2>
+        <p>Découvrez notre sélection d'outils et accessoires pour le jardinage.</p>
+        
+        <!-- Conteneur des produits dynamiques -->
+        <div id="produits-container"></div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Coup de Pousse. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Charger le script en bas pour éviter les erreurs -->
+    <script src="script.js"></script>
+
+    <script>
+        // Charger le fichier produits.json
+        fetch('produits.json')
+            .then(response => response.json())
+            .then(produits => {
+                let boutiqueContainer = document.getElementById('produits-container');
+                produits.forEach(produit => {
+                    let produitHTML = `
+                        <div class="produit">
+                            <div class="images">
+                                ${produit.images.map(image => `<img src="${image}" alt="${produit.nom}">`).join('')}
+                            </div>
+                            <h3>${produit.nom}</h3>
+                            <p>${produit.description}</p>
+                            <span class="prix">${produit.prix}</span>
+                            <a href="${produit.lien}" target="_blank" class="button">Acheter</a>
+                        </div>
+                    `;
+                    boutiqueContainer.innerHTML += produitHTML;
+                });
+            })
+            .catch(error => console.error("Erreur lors du chargement des produits :", error));
+    </script>
+</body>
+</html>
