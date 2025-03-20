@@ -9,5 +9,18 @@
       ],
       "description": "Sécateur de jardin en acier inoxydable de style classique - Manuel, outil de coupe de haute précision pour l'entretien du jardin - Lame antirouille, poignée ergonomique antidérapante",
       "lien": "https://www.temu.com/URL-DU-PRODUIT"
+
+
+        [
+  {
+    "nom": "Sécateur test",
+    "prix": "12,99€",
+    "images": [
+      "https://img.freepik.com/photos-gratuite/secateur-jardinier-fond-blanc_123827-27523.jpg"
+    ],
+    "description": "Un super sécateur pour vérifier que tout marche bien.",
+    "lien": "https://temu.com"
+  }
+]
     }
   ]
